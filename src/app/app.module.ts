@@ -9,6 +9,7 @@ import { AddTodoComponent } from './CustomComponents/add-todo/add-todo.component
 import { TodoItemComponent } from './CustomComponents/todo-item/todo-item.component';
 import { OnepageComponent } from './CustomComponents/onepage/onepage.component';
 import { LoginComponent } from './CustomComponents/login/login.component';
+import { AddPageComponent } from './CustomComponents/add-page/add-page.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { LoginComponent } from './CustomComponents/login/login.component';
     AddTodoComponent,
     TodoItemComponent,
     OnepageComponent,
-    LoginComponent
+    LoginComponent,
+    AddPageComponent
   ],
   imports: [
     BrowserModule,
