@@ -1,9 +1,13 @@
-<div class="container-fluid">
-    <div class="row justify-content-start">
-      <app-onepage></app-onepage>
-      <!-- Add more cards as needed -->
-    </div>
-    <div class="container text-center mt-5">
-      <button type="button" class="btn btn-outline-secondary" (click)="OpenAddPage()">Add</button>
+<div class="m-3 container-fluid">
+  <div class="d-flex flex-wrap"> 
+    <app-onepage *ngFor="let page of pages" [page]="page"></app-onepage>
+  </div>  
+  <div class="container text-center mt-5">
+    <button type="button" class="btn btn-outline-secondary" (click)="openAddPage()">Add</button>
   </div>
 </div>
+
+<div class="backdrop" [ngClass]="{ 'backdrop-open': showModal }"></div>
+
+<app-add-page *ngIf="showModal" (addPage)="handleCreatePage($event)" (closeModal)="closeModal()"></app-add-page>
+ 

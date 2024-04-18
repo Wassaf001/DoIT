@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesComponent } from './CustomComponents/pages/pages.component';
@@ -10,6 +10,10 @@ import { TodoItemComponent } from './CustomComponents/todo-item/todo-item.compon
 import { OnepageComponent } from './CustomComponents/onepage/onepage.component';
 import { LoginComponent } from './CustomComponents/login/login.component';
 import { AddPageComponent } from './CustomComponents/add-page/add-page.component';
+import { FormsModule } from '@angular/forms';
+import { ModalService } from './modal.service';
+import { MatDialogModule } from '@angular/material/dialog';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -24,9 +28,14 @@ import { AddPageComponent } from './CustomComponents/add-page/add-page.component
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule 
   ],
-  providers: [],
+  providers: [
+    ModalService,
+    provideAnimationsAsync()
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

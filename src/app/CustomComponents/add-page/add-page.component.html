@@ -1,1 +1,20 @@
-<p>add-page works!</p>
+<div class="modal">
+  <div class="modal-content">
+    <h2 class="modal-title">Add Page</h2>
+    <form (submit)="submitForm()">
+      <div class="form-group">
+        <label for="title" class="form-label">Title:</label>
+        <input type="text" id="title" name="title" class="form-control" [(ngModel)]="formData.title" required>
+      </div>
+      <div class="form-group">
+        <label for="content" class="form-label">Content:</label>
+        <textarea id="content" name="content" class="form-control" rows="4" [(ngModel)]="formData.content" required></textarea>
+      </div>
+      <div class="button-group">
+        <button type="submit" class="btn btn-primary">Add Page</button>
+        <button type="button" class="btn btn-secondary" (click)="close()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
